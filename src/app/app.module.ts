@@ -12,6 +12,7 @@ import { HeroDetaiComponent } from './hero-detai/hero-detai.component';
 import { ArticulosComponent } from './componentes/articulos/articulos.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { ProductoComponent } from './componentes/producto/producto.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductoComponent } from './componentes/producto/producto.component';
     HeroDetaiComponent,
     ArticulosComponent,
     HeaderComponent,
-    ProductoComponent
+    ProductoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
