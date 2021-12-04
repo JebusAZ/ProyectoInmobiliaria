@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+<<<<<<< HEAD
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
@@ -13,10 +14,14 @@ import { ArticulosComponent } from './componentes/articulos/articulos.component'
 import { HeaderComponent } from './componentes/header/header.component';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { LoginComponent } from './componentes/login/login.component';
+=======
+import { PublishFormComponent } from './publish-form/publish-form.component';
+>>>>>>> gibran
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     NavbarComponent,
     HomeComponent,
     NosotrosComponent,
@@ -27,6 +32,9 @@ import { LoginComponent } from './componentes/login/login.component';
     HeaderComponent,
     ProductoComponent,
     LoginComponent
+=======
+    PublishFormComponent
+>>>>>>> gibran
   ],
   imports: [
     BrowserModule,
