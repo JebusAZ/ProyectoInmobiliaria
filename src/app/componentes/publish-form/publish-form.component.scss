@@ -1,5 +1,3 @@
-$color:rgb(0, 109, 150, 1);
-
 form{
     color: white; 
     background-color: rgb(37, 149, 190);
@@ -9,24 +7,9 @@ form{
 }
 
 .btn{
-    background: lighten($color, 3%);  
-    border: 1px solid darken($color, 4%);
-    box-shadow: 0px 2px 0 darken($color, 5%), 2px 4px 6px darken($color, 2%);
-    letter-spacing: 1px;
-    transition: all 150ms linear;
-    margin-top: 30px;
-    width: 45%;
+    width: 35%;
   }
-  
-  .btn:hover {
-    background: darken($color, 1.5%);
-    border: 1px solid rgba(#000, .05);
-    box-shadow: 1px 1px 2px rgba(#fff, .2);
-    color: lighten($color, 10%); 
-    text-decoration: none;
-    text-shadow: -1px -1px 0 darken($color, 9.5%);
-    transition: all 250ms linear;
-  }
+
 input[type="file"]{
     border-color: none;    
     width: 100%;
