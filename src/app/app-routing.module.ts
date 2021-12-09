@@ -6,6 +6,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { PublishFormComponent } from './componentes/publish-form/publish-form.component';
 import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { UsuarioComponent } from './componentes/usuario/usuario.component';
+
 
 
 export const routes: Routes = [
@@ -15,7 +17,8 @@ export const routes: Routes = [
     {path:'login', component:LoginComponent},
     {path:'form', component: PublishFormComponent},
     {path:'nosotros', component:NosotrosComponent},
-    {path:'inicio', component:HomeComponent}
+    {path:'inicio', component:HomeComponent},
+    {path:'usuario', component:UsuarioComponent}
 ]
 //no hagas push hasta que funcione
 @NgModule({
