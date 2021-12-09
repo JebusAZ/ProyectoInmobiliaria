@@ -7,22 +7,23 @@ import { PublishFormComponent } from './componentes/publish-form/publish-form.co
 import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
 export const routes: Routes = [
     {path: '', redirectTo: 'inmuebles', pathMatch:'full'},
     {path:'inmuebles', component: ArticulosComponent},
-    {path:'producto', component: ProductoComponent},
+    {path:'producto', component: ProductoComponent, canActivate: [AuthGuard]},
     {path:'login', component:LoginComponent},
-    {path:'form', component: PublishFormComponent},
+    {path:'form', component: PublishFormComponent,  canActivate: [AuthGuard]},
     {path:'nosotros', component:NosotrosComponent},
     {path:'inicio', component:HomeComponent},
     {path:'usuario', component:UsuarioComponent}
 ]
 //no hagas push hasta que funcione
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

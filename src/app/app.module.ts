@@ -47,7 +47,8 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AngularFireModule.initializeApp(environment.FIREBASE_SETTINGS),
     AngularFireAuthModule,
-    RouterModule
+    RouterModule,
+    AppRoutingModule
    
   ],
   providers: [],
