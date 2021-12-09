@@ -1,6 +1,25 @@
 <div class="bg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#006D96 !important;">
+        <div class="container-fluid">
+          <img src="../../../assets/logo.svg" width="30" height="24">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ms-auto">
+              <!--Los inicio  los colocare con el routerlink="/inmuebles" por el momento-->
+                <a class="nav-link" aria-current="page" routerLink="/inmuebles">Inicio</a>
+                <a class="nav-link" routerLink="/nosotros">Nosotros</a>
+                <a class="nav-link" routerLink="/inmuebles">Inmuebles</a>
+                <button type="button" routerLink="/login" class="btn btn-primary btn-menu">Iniciar Sesión</button>
+                <button type="button" routerLink="/usuario" class="btn btn-primary btn-menu">Registrarse</button>
+            </div>
+          </div>
+        </div>
+      </nav>
     <app-navbar></app-navbar>
     <app-header></app-header>
     <router-outlet></router-outlet>
     <app-footer></app-footer>
+
 </div>

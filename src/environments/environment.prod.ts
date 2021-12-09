@@ -1,11 +1,11 @@
 export const environment = {
   firebase: {
-    projectId: 'angularoauth-8b1b8',
-    appId: '1:846183427983:web:4169e9df46018d234b65fa',
-    storageBucket: 'angularoauth-8b1b8.appspot.com',
-    apiKey: 'AIzaSyBZntiS3jRkMUE3SSREIrw1wewCSo_TKVM',
-    authDomain: 'angularoauth-8b1b8.firebaseapp.com',
-    messagingSenderId: '846183427983',
+    projectId: 'angularoauthlogin',
+    appId: '1:91359513434:web:43515700315cd93912c163',
+    storageBucket: 'angularoauthlogin.appspot.com',
+    apiKey: 'AIzaSyBu61jFTy0_asxOl9W5NSgyZJFRGFsZ2m4',
+    authDomain: 'angularoauthlogin.firebaseapp.com',
+    messagingSenderId: '91359513434',
   },
   production: true
 };
