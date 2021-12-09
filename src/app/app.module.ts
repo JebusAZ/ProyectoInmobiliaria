@@ -13,6 +13,7 @@ import { HeaderComponent } from './componentes/header/header.component';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { PublishFormComponent } from './componentes/publish-form/publish-form.component';
+import { UsuarioComponent } from './componentes/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { PublishFormComponent } from './componentes/publish-form/publish-form.co
     HeaderComponent,
     ProductoComponent,
     LoginComponent,    
-    PublishFormComponent
+    PublishFormComponent, UsuarioComponent
   ],
   imports: [
     BrowserModule,
