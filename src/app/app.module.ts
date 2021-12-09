@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 //Firebase modules 
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -41,7 +40,7 @@ import { environment } from '../environments/environment';
     HeaderComponent,
     ProductoComponent,
     LoginComponent,    
-    PublishFormComponent, UsuarioComponent
+    PublishFormComponent, UsuarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +48,7 @@ import { environment } from '../environments/environment';
     AngularFireAuthModule,
     RouterModule,
     AppRoutingModule
-   
+
   ],
   providers: [],
   bootstrap: [AppComponent]

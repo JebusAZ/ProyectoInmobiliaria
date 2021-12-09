@@ -1,35 +1,48 @@
-<form class="container col-10 my-3 " >
+<form class="container col-10 my-3" (submit)="subirInmueble(titulo, descripcion, precio, categoria, municipio, direccion, imagen)">
     <div class="form-group my-2">
       <label>Titulo del Articulo</label>
-      <input type="text" class="form-control"  placeholder="">
+      <input type="text" class="form-control"  placeholder="" required #titulo>
     </div>
     <div class="form-group my-2">
       <label>Descripcion del Articulo</label>
-      <textarea class="form-control" rows="5"></textarea>
+      <textarea class="form-control" rows="5" required #descripcion></textarea>
     </div>
     <div class="row my-2">
       <div class="col-sm-6">
         <label>Precio</label>
         <br>
-        <input type="text" class="form-control"  placeholder="">
+        <input type="text" class="form-control"  placeholder="" required #precio>
       </div>  
       <div class="col-sm-6">
         <label>Categoria</label>
         <br>
-        <select class="custom-select form-control">
-          <option selected>Seleccione su Categoria</option>
+        <select class="custom-select form-control" required #categoria>
+          <option value="0" selected >Seleccione su Categoria</option>
           <option value="1">Renta</option>
           <option value="2">Venta</option>
         </select>
       </div>  
     </div>
+    <div class="row my-2">
+      <div class="col-sm-6">
+        <label>Municipio</label>
+        <br>
+        <input type="text" class="form-control"  placeholder="" required #municipio>
+      </div>  
+      <div class="col-sm-6">
+        <label>Direccion</label>
+        <br>
+        <input type="text" class="form-control"  placeholder="" required #direccion>
+      </div>  
+    </div>
     <div class="col-sm-6 row my-3 images" >
       <div>
-        <label class="form-label ">Imagenes del Articulo</label>
-        <input class="form-control" accept="image/png, image/jpeg" type="file" multiple/> 
+        <label class="form-label " >Imagenes del Articulo</label>
+        <input class="form-control" type="file" accept="image/*" (change)="getBase64($event)" required #imagen/> 
       </div> 
     </div>
     <div class="d-flex flex-row-reverse">
-      <button type="submit" routerLink="/inmuebles" class="btn btn-primary btn-lg btn-menu">Publicar</button>
+      <button type="submit"  class="btn btn-primary btn-lg btn-menu" >Publicar</button>
     </div>
 </form>
+<!--routerLink="/inmuebles"-->
