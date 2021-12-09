@@ -1,5 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+//Firebase modules 
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { AngularFireModule} from '@angular/fire/compat'
+import { AngularFireAuthModule} from '@angular/fire/compat/auth'
+
+//Components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { HomeComponent } from './componentes/home/home.component';
@@ -14,6 +22,9 @@ import { ProductoComponent } from './componentes/producto/producto.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { PublishFormComponent } from './componentes/publish-form/publish-form.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
+
+//enviroments
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -32,7 +43,9 @@ import { UsuarioComponent } from './componentes/usuario/usuario.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AngularFireModule.initializeApp(environment.FIREBASE_SETTINGS),
+    AngularFireAuthModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
