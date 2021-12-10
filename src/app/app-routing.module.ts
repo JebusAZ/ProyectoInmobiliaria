@@ -17,7 +17,7 @@ export const routes: Routes = [
     {path:'inmuebles', component: ArticulosComponent},
     {path:'producto', component: ProductoComponent},
     {path:'login', component:LoginComponent},
-    {path:'form', component: PublishFormComponent,  canActivate: [AuthGuard]},
+    {path:'form', component: PublishFormComponent},
     {path:'nosotros', component:NosotrosComponent},
     {path:'inicio', component:HomeComponent},
     {path:'usuario', component:UsuarioComponent},
