@@ -1,55 +1,7 @@
-<div class="bg">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#006D96 !important;">
-      <div class="container-fluid">
-        <img src="../../../assets/logo.svg" width="269" height=auto>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <div class="navbar-nav ms-auto">
-            <!--Los inicio  los colocare con el routerlink="/inmuebles" por el momento-->
-              <a class="nav-link" aria-current="page" routerLink="/inmuebles">Inicio</a>
-              <a class="nav-link" routerLink="/nosotros">Nosotros</a>
-              <a class="nav-link" routerLink="/inmuebles">Inmuebles</a>
-              <button *ngIf="this.authSvc.userloggedIn" type="button" routerLink="/form" class="btn btn-outline-light btn-menu">Crear Publicacion</button>
-              <button *ngIf="this.authSvc.userloggedIn" (click)="this.authSvc.logoutUser() " type="button" class="btn btn-outline-light btn-menu"> Cerrar Sesion</button><!--boton control login --->
-              <button *ngIf="!this.authSvc.userloggedIn" type="button" routerLink="/login" class="btn btn-outline-light btn-menu">Iniciar Sesión</button>
-              <button *ngIf="!this.authSvc.userloggedIn" type="button" routerLink="/usuario" class="btn btn-outline-light btn-menu">Registrarse</button>
-          </div>
-        </div>
-      </div>
-    </nav>
 
-    <div style="background: url(./assets/bg_header.jpg)" class="jumbotron bg-cover text-white">
-      <div class="container py-5 text-center">
-          <h1 class="display-4 font-weight-bold">tuksa.com</h1>
-          <p class="font-italic mb-0">¡Seguridad y tranquilidad para tu familia!</p>
-          <div class="container py-2">
-              <p>
-                  <a routerLink="/inmuebles" role="button" class="btn btn-outline-light px-5" style="">Encuentra tu hogar!</a>
-              </p>
-          </div>
-          
-      </div>
-    </div>
-  
-  
+     <app-navbar></app-navbar>
+ <app-header></app-header>
+   <div class="bg container-fluid">
     <router-outlet></router-outlet>
-    
-    
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-6" style="background-color:#006D96 !important;">
-      <p class="nav-item col-md-4 mb-0 justify-content-center" style="background-color:#006D96 !important;">&copy; tuksa.com - Desarrollado por: tuksa.com</p>
-      <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="#" class="nav-link px-2">2021 Copyright</a></li>
-      </ul>
-    </footer>
-     
-    
-    
-    
-    
-    
-  <!--<app-navbar></app-navbar>-->
-  <!--<app-header></app-header>-->
-  <!--<app-footer></app-footer>-->
-</div>
+    </div>
+    <app-footer></app-footer>

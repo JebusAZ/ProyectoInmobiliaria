@@ -24,10 +24,11 @@ import { LoginComponent } from './componentes/login/login.component';
 import { PublishFormComponent } from './componentes/publish-form/publish-form.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
 import { RouterModule } from '@angular/router';
-
+import { LocalesComponent } from './componentes/locales/locales.component';
 
 //enviroments
 import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { environment } from '../environments/environment';
     HeaderComponent,
     ProductoComponent,
     LoginComponent,    
-    PublishFormComponent, UsuarioComponent,
+    PublishFormComponent, UsuarioComponent, LocalesComponent,
   ],
   imports: [
     BrowserModule,

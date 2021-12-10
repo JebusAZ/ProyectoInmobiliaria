@@ -8,6 +8,7 @@ import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
 import { AuthGuard } from './guards/auth.guard';
+import { LocalesComponent } from './componentes/locales/locales.component';
 
 
 
@@ -19,7 +20,9 @@ export const routes: Routes = [
     {path:'form', component: PublishFormComponent,  canActivate: [AuthGuard]},
     {path:'nosotros', component:NosotrosComponent},
     {path:'inicio', component:HomeComponent},
-    {path:'usuario', component:UsuarioComponent}
+    {path:'usuario', component:UsuarioComponent},
+    {path:'locales', component:LocalesComponent}
+
 ]
 //no hagas push hasta que funcione
 @NgModule({

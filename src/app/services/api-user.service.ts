@@ -29,7 +29,7 @@ export class ApiUserService {
 
     loginByEmail(form: LoginI):Observable<ResponseI> //LOGIN FORM
     {
-      let direccion = this.url + "login";
+      let direccion = this.url + "buscarUsuarioByEmail";
       return this.http.post<ResponseI>(direccion,form);
     }
 

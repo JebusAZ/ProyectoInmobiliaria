@@ -40,7 +40,7 @@ getCurrentUser()
 logoutUser() : Promise<void> {
   return this.auth.signOut().then(() => {
     console.log('Auth Service: logoutUser: success');
-    this.router.navigate(['inmueble'])
+    this.router.navigate(['/inmuebles'])
   }).catch((err:any) => {
     console.log('Auth Service: LogoutUser: error', err)
   });
