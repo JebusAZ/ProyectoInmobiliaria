@@ -31,8 +31,8 @@ export class UsuarioComponent implements OnInit {
 
   agregarUsuario(form:UsuarioI){
     if(this.userForm.valid){
-   // console.log(form); //consulta formulario
-    this.apiSvc.nuevoUsuario(form).subscribe(data => console.log(data)); 
+    //console.log(form); //consulta formulario
+   this.apiSvc.nuevoUsuario(form).subscribe(data => console.log(data)); 
     this.router.navigate(['./login']);
     //consulta api y funciones 
     
