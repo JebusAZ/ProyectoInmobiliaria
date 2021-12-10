@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiUserService } from 'src/app/services/api-user.service';
 import { UsuarioI } from '../../Modelos/usuario.interface'
-import { FormGroup, FormControl, Validators} from '@angular/forms'
+import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-usuario',
@@ -19,35 +20,29 @@ export class UsuarioComponent implements OnInit {
     contraseña: new FormControl('', Validators.required)
   })
 
-  constructor(private apiSvc: ApiUserService) { }
+  constructor(private apiSvc: ApiUserService,private router: Router) { }
+ 
+  isError = false;
+  isErrorMsg = "";
 
   ngOnInit(): void {
   }
 
-///AGREGAR USUARIO TATUADO INICIO !! CAMBIAR FUNCIONES EN BOTON
-  addUser()
-  {
-    
-      const params = {
-
-      "nombre": "string4",
-      "primerApellido": "string4",
-      "segundoApellido": "string4",
-      "email": "string",
-      "contraseña": "string",
-      "isOauth": true
-      
-    }
-
-    this.apiSvc.newUser(params).subscribe((result: any)=> {
-      console.log('Usuario component: addUser : result: ', result);
-    });
-  } ///FINAL
 
   agregarUsuario(form:UsuarioI){
+    if(this.userForm.valid){
    // console.log(form); //consulta formulario
-    this.apiSvc.nuevoUsuario(form).subscribe(data => console.log(data)); //servicio api y funciones 
-    //cosulta api
-  }
-
+    this.apiSvc.nuevoUsuario(form).subscribe(data => console.log(data)); 
+    this.router.navigate(['./login']);
+    //consulta api y funciones 
+    
+  }else {
+      this.isErrorMsg = "Campo(s) Vacio(s)"
+      console.log("campos vacios");
+      this.isError = true;
+      setTimeout(() => {
+        this.isError = false;
+      }, 2000);
+     }
+    }
 }

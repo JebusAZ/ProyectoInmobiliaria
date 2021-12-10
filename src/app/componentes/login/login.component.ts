@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { ApiUserService} from '../../services/api-user.service'
 import { LoginI } from '../../Modelos/login.interface'
-import { FormGroup, FormControl, Validators} from '@angular/forms'
+import { FormGroup, FormControl, Validators, FormsModule} from '@angular/forms'
 import { routes } from 'src/app/app-routing.module';
-import { Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
+import { ResponseI } from 'src/app/Modelos/response.interface';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
    selector: 'app-login',
@@ -20,10 +22,22 @@ export class LoginComponent implements OnInit {
   })
   
 
-  constructor(private authSvc: AuthService , private api: ApiUserService, private router: Router) { }
+  constructor(private auth: AngularFireAuth,private authSvc: AuthService , private api: ApiUserService, private router: Router) { }
+
+  
+  isError = false;
+  isErrorMsg = "";
+
+  tokenON = false;
 
   ngOnInit(): void {
+  
   }
+ 
+ 
+
+
+  
 
   ///LOGIN GOOGLE INICIO
   async login(){
@@ -32,23 +46,36 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['./inmuebles']);
   }
 
-///LOGIN FORM
   onLogin(form:LoginI){
-//console.log(form); //consulta formulario
-    this.api.loginByEmail(form).subscribe(data => console.log(data)); //cosulta api
-    //servicio api y funciones
+      if(this.loginForm.valid){ 
+    //console.log(form); //consulta formulario
+        this.api.loginByEmail(form).subscribe(data => {
 
-  }
+          console.log(data)
+      let dataResponse: ResponseI = data;
+      if(dataResponse.codigoEstatus == 200)
+      {
+        console.log('entraste');
+        localStorage.setItem("email", dataResponse.objData.email.toString());
+       
+         this.router.navigate(['./inmuebles']);
+        
+         
+      }
+        });
+       
+    } else{
 
-///BUSCAR USUARIO POR EMAIL TATUADO INICIO !! CAMBIAR FNC BOTON
-  //searchByEmail(){
-   /// const email = {
-    //  "email": "correo@correo.com"
-//}
-    //this.api.consultarLogin(email).subscribe((result: any)=> {
-   //   console.log('Login component: BYEMAIL : result: ', result);
-  //  })
- // } ///FINAL
+      this.isErrorMsg = "Campo(s) Vacio(s)"
+      console.log("campos vacios");
+      this.isError = true;
+      setTimeout(() => {
+        this.isError = false;
+      }, 2000);
+    }
+      }
 
+      
 
+ 
 }

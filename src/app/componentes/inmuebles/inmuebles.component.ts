@@ -10,6 +10,8 @@ export class InmueblesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+   
   }
 
+  
 }

@@ -10,11 +10,15 @@
             <a class="nav-link" aria-current="page" routerLink="/inmuebles">Inicio</a>
             <a class="nav-link" routerLink="/nosotros">Nosotros</a>
             <a class="nav-link" routerLink="/locales">Locales Comerciales</a>
-            <button *ngIf="this.authSvc.userloggedIn" type="button" routerLink="/form" class="btn btn-outline-light btn-menu">Crear Publicacion</button>
-            <button *ngIf="this.authSvc.userloggedIn" (click)="this.authSvc.logoutUser() " type="button" class="btn btn-outline-light btn-menu"> Cerrar Sesion</button><!--boton control login --->
-            <button *ngIf="!this.authSvc.userloggedIn" type="button" routerLink="/login" class="btn btn-outline-light btn-menu">Iniciar Sesión</button>
-            <button *ngIf="!this.authSvc.userloggedIn" type="button" routerLink="/usuario" class="btn btn-outline-light btn-menu">Registrarse</button>
+
+           <button *ngIf="this.authSvc.userloggedIn || this.api.tokenON" type="button" routerLink="/form" class="btn btn-outline-light btn-menu">Crear Publicacion</button>
+            <button *ngIf="this.authSvc.userloggedIn && !this.api.tokenON" (click)="this.authSvc.logoutUser() " type="button" class="btn btn-outline-light btn-menu"> Cerrar Sesion go</button><!--boton control login --->
+            <button *ngIf="!this.authSvc.userloggedIn && this.api.tokenON" (click)="this.api.onLogout() " type="button" class="btn btn-outline-light btn-menu"> Cerrar Sesion </button><!--boton control login --->
+            <button *ngIf="!this.api.tokenON" type="button" routerLink="/login" class="btn btn-outline-light btn-menu">Iniciar Sesión</button>
+            <button *ngIf="!this.api.tokenON" type="button" routerLink="/usuario" class="btn btn-outline-light btn-menu">Registrarse</button>
         </div>
       </div>
     </div>
   </nav>
+
+  
