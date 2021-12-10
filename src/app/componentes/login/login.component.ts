@@ -3,6 +3,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { ApiUserService} from '../../services/api-user.service'
 import { LoginI } from '../../Modelos/login.interface'
 import { FormGroup, FormControl, Validators} from '@angular/forms'
+import { routes } from 'src/app/app-routing.module';
+import { Router } from '@angular/router';
 
 @Component({
    selector: 'app-login',
@@ -16,8 +18,9 @@ export class LoginComponent implements OnInit {
     email : new FormControl('', Validators.required),
     contraseña : new FormControl('', Validators.required)
   })
+  
 
-  constructor(private authSvc: AuthService , private api: ApiUserService) { }
+  constructor(private authSvc: AuthService , private api: ApiUserService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,6 +29,7 @@ export class LoginComponent implements OnInit {
   async login(){
     await this.authSvc.loginUser();
     console.log('Login component: login: click: success: ', this.authSvc.userloggedIn);
+    this.router.navigate(['/inmuebles']);
   }
 
 ///LOGIN FORM

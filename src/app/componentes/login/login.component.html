@@ -1,4 +1,4 @@
-<section class="vh-100 gradient-custom">
+<section class="bg">
   <div class="container py-5 h-25">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -23,15 +23,17 @@
 
               <p class=" mb-3 pb-lg-2"><a class="text-50 text-white" href="#!">¿Olvidaste tu contraseña?</a></p>
 
-              <button  class="btn btn-outline-light btn-lg  px-5" routerLink="/form" type="submit">Iniciar sesión</button>
+              <button  class="btn btn-outline-light btn-lg  px-5" routerLink="inmuebles" type="submit">Iniciar sesión</button>
               </form>
             </div>
 
             <div>
-              <button (click)="login()" class="btn btn-outline-dark  btn-block mb-4"  style="background-color: #f7f7f7;" type="submit"> <img src="http://i.stack.imgur.com/e2S63.png" width="30" /> Sign in with facebook</button></div>
+              <button (click)="login()" class="btn btn-outline-dark  btn-block mb-4"  style="background-color: #f7f7f7;" type="submit"> <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width="30" />  Inicia sesion con Google</button>
+              
+            </div>
 
-            <div>
-              <p class=" mb-0 text-white">¿No tienes una cuenta? <a href="#!" class="text-white-50 fw-bold">Regístrate</a></p>
+            <div >
+              <p   class=" mb-0 text-white">¿No tienes una cuenta? <a routerLink="/usuario"  class="text-white-50 fw-bold">Regístrate</a></p>
             </div>
 
           </div>

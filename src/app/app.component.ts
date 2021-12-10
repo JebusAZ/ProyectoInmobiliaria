@@ -18,3 +18,4 @@ export class AppComponent {
   isLogin: boolean = false;
 
 }
+

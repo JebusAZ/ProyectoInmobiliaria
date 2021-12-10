@@ -11,10 +11,10 @@
               <a class="nav-link" aria-current="page" routerLink="/inmuebles">Inicio</a>
               <a class="nav-link" routerLink="/nosotros">Nosotros</a>
               <a class="nav-link" routerLink="/inmuebles">Inmuebles</a>
-              <button *ngIf="this.authSvc.userloggedIn" type="button" routerLink="/form" class="btn btn-primary btn-menu">Crear Publicacion</button>
-              <button *ngIf="this.authSvc.userloggedIn" (click)="this.authSvc.logoutUser() " type="button" class="btn btn-primary btn-menu"> Cerrar Sesion</button><!--boton control login --->
-              <button *ngIf="!this.authSvc.userloggedIn" type="button" routerLink="/login" class="btn btn-primary btn-menu">Iniciar Sesión</button>
-              <button *ngIf="!this.authSvc.userloggedIn" type="button" routerLink="/usuario" class="btn btn-primary btn-menu">Registrarse</button>
+              <button *ngIf="this.authSvc.userloggedIn" type="button" routerLink="/form" class="btn btn-outline-light btn-menu">Crear Publicacion</button>
+              <button *ngIf="this.authSvc.userloggedIn" (click)="this.authSvc.logoutUser() " type="button" class="btn btn-outline-light btn-menu"> Cerrar Sesion</button><!--boton control login --->
+              <button *ngIf="!this.authSvc.userloggedIn" type="button" routerLink="/login" class="btn btn-outline-light btn-menu">Iniciar Sesión</button>
+              <button *ngIf="!this.authSvc.userloggedIn" type="button" routerLink="/usuario" class="btn btn-outline-light btn-menu">Registrarse</button>
           </div>
         </div>
       </div>
@@ -26,7 +26,7 @@
           <p class="font-italic mb-0">¡Seguridad y tranquilidad para tu familia!</p>
           <div class="container py-2">
               <p>
-                  <a routerLink="/inmuebles" role="button" class="btn btn-primary px-5">Encuentra tu hogar!</a>
+                  <a routerLink="/inmuebles" role="button" class="btn btn-outline-light px-5" style="">Encuentra tu hogar!</a>
               </p>
           </div>
           

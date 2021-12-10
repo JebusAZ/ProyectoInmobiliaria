@@ -22,6 +22,12 @@
 }
 
 .btn-outline-dark:hover{
-    background-color: #385898  !important;
-    border-color: #385898;
+    background-color: #dfdddd  !important;
+    border-color: #dfdddd;
+    color: black;
 }
+
+#registrate:hover {
+    text-decoration: underline;
+    color:white ;
+  }
