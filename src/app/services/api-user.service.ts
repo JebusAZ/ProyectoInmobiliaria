@@ -22,7 +22,7 @@ export class ApiUserService {
   }
  
 
-  url:string = 'https://localhost:44340/api/Usuarios/'
+  url:string = 'http://inmobiliariatuksa.eastus.cloudapp.azure.com/api/Usuarios/'
 
 
     //newUser(params:any) //CREAR USUARIO TATUADO
