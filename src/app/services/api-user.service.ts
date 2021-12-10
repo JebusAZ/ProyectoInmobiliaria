@@ -12,13 +12,13 @@ export class ApiUserService {
 
   constructor(private http: HttpClient) {}
 
-  url:string = 'http://inmobiliariatuksa.eastus.cloudapp.azure.com/api/Usuarios/'
+  url:string = 'https://localhost:44340/api/Usuarios/'
 
 
     newUser(params:any) //CREAR USUARIO TATUADO
     {
       let direccion = this.url + "crearUsuario";
-      return this.http.post(direccion, params);
+      return this.http.post(direccion, params)
     }
 
     nuevoUsuario(form: UsuarioI) //CREAR USUARIO FORM
@@ -29,7 +29,7 @@ export class ApiUserService {
 
     loginByEmail(form: LoginI):Observable<ResponseI> //LOGIN FORM
     {
-      let direccion = this.url + "buscarUsuarioByEmail?";
+      let direccion = this.url + "login";
       return this.http.post<ResponseI>(direccion,form);
     }
 
@@ -39,7 +39,7 @@ export class ApiUserService {
     //  return this.http.get(direccion, params);
    // }
 
-   
+
 
 
 

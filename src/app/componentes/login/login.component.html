@@ -12,12 +12,12 @@
 
               <form [formGroup] = "loginForm" (ngSubmit)="onLogin(loginForm.value)">
               <div class="form-floating mb-4">
-                <input type="email" id="Correo" class="form-control" placeholder="name@example.com" formControlName="usuario"/>
+                <input type="email" id="Correo" class="form-control" placeholder="name@example.com" formControlName="email"/>
                 <label class="form-label" for="Correo">Correo electrónico</label>
               </div>
 
               <div class="form-floating mb-4">
-                <input type="password" id="Pwd" class="form-control" placeholder="Password" formControlName="password"/>
+                <input type="password" id="Pwd" class="form-control" placeholder="Password" formControlName="contraseña"/>
                 <label class="form-label" for="Pwd">Contraseña</label>
               </div>
 

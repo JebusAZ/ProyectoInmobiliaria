@@ -6,15 +6,15 @@ import { FormGroup, FormControl, Validators} from '@angular/forms'
 
 @Component({
    selector: 'app-login',
-    templateUrl: './login.component.html', 
+    templateUrl: './login.component.html',
     styleUrls: [ './login.component.css']
 })
 export class LoginComponent implements OnInit {
 
   //FORM LOGIN
   loginForm = new FormGroup({
-    usuario : new FormControl('', Validators.required),
-    password : new FormControl('', Validators.required)
+    email : new FormControl('', Validators.required),
+    contraseña : new FormControl('', Validators.required)
   })
 
   constructor(private authSvc: AuthService , private api: ApiUserService) { }
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   onLogin(form:LoginI){
 //console.log(form); //consulta formulario
     this.api.loginByEmail(form).subscribe(data => console.log(data)); //cosulta api
-    //servicio api y funciones 
+    //servicio api y funciones
 
   }
 
