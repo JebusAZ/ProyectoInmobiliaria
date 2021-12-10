@@ -2,17 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  selector: 'app-locales',
+  templateUrl: './locales.component.html',
+  styleUrls: ['./locales.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class LocalesComponent implements OnInit {
 
   constructor(public authSvc:AuthService) { }
 
   ngOnInit(): void {
   }
   isLogin: boolean = false;
-
-
 }

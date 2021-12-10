@@ -1,0 +1,23 @@
+<section class="wrapper col-md">
+    <div class="container py-5">
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="../../../assets/asesores.jpg" width="580" height=auto>
+            </div>
+            <div class="col-lg-6">
+                <h1 class="h1 font-weight-bold">Servicio no disponible</h1>
+                <p align="justify" class="font-italic text-muted"><strong>¡Hola!</strong> el servicio para locales comerciales aún no 
+                    se encuentra disponible, estamos trabajando para darte una calidad de servicio.</p>
+                <h3 class="h3 font-weight-bold">¿Buscas vender o rentar un local comercial?</h3>
+                <p align="justify" class="font-italic text-muted"><strong>Acercate a nuestras oficinas,</strong> y con gusto te atenderemos. 
+                    Nuestras excelentes ubicaciones geográficas te ayudarán a posicionar tu negocio con el mayor flujo de clientes.
+                
+                </p>
+                    <p>
+                        <a *ngIf="!this.authSvc.userloggedIn" routerLink="/login" role="button" class="btn btn-outline-light px-5">¡Quiero registrarme!</a>
+                    </p>
+            </div>
+        </div>
+    </div>
+  </section>

@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   async login(){
     await this.authSvc.loginUser();
     console.log('Login component: login: click: success: ', this.authSvc.userloggedIn);
-    this.router.navigate(['/inmuebles']);
+    this.router.navigate(['./inmuebles']);
   }
 
 ///LOGIN FORM
