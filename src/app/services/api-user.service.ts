@@ -4,22 +4,34 @@ import { LoginI} from '../Modelos/login.interface'
 import { ResponseI} from '../Modelos/response.interface'
 import { Observable } from 'rxjs';
 import { UsuarioI } from '../Modelos/usuario.interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiUserService {
+  tokenON = false;
+  constructor(private http: HttpClient, private router: Router) { 
+    if(localStorage.getItem('email') != null){
+      this.tokenON = true;
+    }
+    else{
+      this.tokenON = false;
 
-  constructor(private http: HttpClient) {}
+    }
+  }
+ 
 
   url:string = 'https://localhost:44340/api/Usuarios/'
 
 
-    newUser(params:any) //CREAR USUARIO TATUADO
-    {
-      let direccion = this.url + "crearUsuario";
-      return this.http.post(direccion, params)
-    }
+    //newUser(params:any) //CREAR USUARIO TATUADO
+   // {
+   //   let direccion = this.url + "crearUsuario";
+   //   return this.http.post(direccion, params)
+   // }
+
+   
 
     nuevoUsuario(form: UsuarioI) //CREAR USUARIO FORM
     {
@@ -33,6 +45,17 @@ export class ApiUserService {
       return this.http.post<ResponseI>(direccion,form);
     }
 
+    onLogout() {
+      localStorage.removeItem('email');
+      localStorage.clear();
+      this.refresh();
+     //this.router.navigate(['login']);
+     
+    }
+
+    refresh(): void {
+      window.location.reload();
+  }
     //consultarLogin(params:any) //BUSCAR POR EMAIL TATUADO
    // {
     //  let direccion = this.url + "buscarUsuarioByEmail?";

@@ -1,4 +1,6 @@
 export interface ResponseI{
-    status:string;
-    response:string;
+    codigoEstatus:number;
+    objData: {email: string};
+    error: {codigoEstatus: number};
+    
 }
