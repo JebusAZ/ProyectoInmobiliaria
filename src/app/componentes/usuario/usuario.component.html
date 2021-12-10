@@ -9,35 +9,36 @@
   
                 <h4 class="fw-bold  mb-4 text-uppercase text-white">Registro</h4>
                 <p class="lead  mb-4 text-white">Por favor introduce tus datos : </p>
-  
+
+                <form [formGroup] = "userForm" (ngSubmit)="agregarUsuario(userForm.value)">
                 <div class="form-floating mb-4">
-                  <input type="text" id="Nombre" class="form-control" placeholder="Juan" />
+                  <input type="text" id="Nombre" class="form-control" placeholder="Juan" formControlName="nombre" />
                   <label class="form-label" for="Nombre">Nombre</label>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input type="text" id="Ape_P" class="form-control" placeholder="Juan" />
+                    <input type="text" id="Ape_P" class="form-control" placeholder="Juan" formControlName="primerApellido" />
                     <label class="form-label" for="Ape_P">Apellido Paterno</label>
                   </div>
 
                   <div class="form-floating mb-4">
-                    <input type="text" id="Ape_M" class="form-control" placeholder="Juan" />
+                    <input type="text" id="Ape_M" class="form-control" placeholder="Juan" formControlName="segundoApellido" />
                     <label class="form-label" for="Ape_M">Apellido Materno</label>
                   </div>
 
                 <div class="form-floating mb-4">
-                    <input type="email" id="Correo" class="form-control" placeholder="name@example.com" />
+                    <input type="email" id="Correo" class="form-control" placeholder="name@example.com" formControlName="email" />
                     <label class="form-label" for="Correo">Correo electrónico</label>
                   </div>
   
                 <div class="form-floating mb-5">
-                  <input type="password" id="Pwd" class="form-control" placeholder="Password" />
+                  <input type="password" id="Pwd" class="form-control" placeholder="Password" formControlName="contraseña"/>
                   <label class="form-label" for="Pwd">Contraseña</label>
                 </div>
   
   
-                <button class="btn btn-outline-light btn-lg px-5" routerLink="/form" type="submit">Registrarse</button>
-  
+                <button class="btn btn-outline-light btn-lg px-5"  type="submit">Registrarse</button>
+              </form>
               </div>
 
             
